@@ -1,18 +1,15 @@
-import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import "./App.css";
 
 function App() {
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
-    fetch('/api/hello')
-    .then(res => res.json())
-    .then(data => setMessage(data.message));
+    fetch("/api/hello")
+      .then((res) => res.json())
+      .then((data) => setMessage(data.message));
   }, []);
-   return <p>{message}</p>
+  return <p className="font-bold p-4 text-3xl">{message}</p>;
 }
 
-export default App
-  
+export default App;
